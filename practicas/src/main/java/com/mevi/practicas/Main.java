@@ -10,7 +10,11 @@ public class Main {
      * private, protected, public
      */
 
-    //Metodo principal
+    /**
+     * Metodo principal de la clase
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         //constantes
         final short enteroCorto = 12; //32767
@@ -91,6 +95,11 @@ public class Main {
         }
     }
 
+    /**
+     * Metodo para imprimir un titulo
+     *
+     * @param title
+     */
     private static void nuevoTema(String title) {
         System.out.println("\n============>" + title + ":");
     }
