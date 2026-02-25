@@ -33,6 +33,9 @@ public class POO {
         casaList.add(claudaCasa);
         casaList.add(casaVacia);
 
+        casaList.remove(1);
+        casaList.set(1, miCasa);
+
         for (Casa casa : casaList) {
             System.out.println(casa);
         }
@@ -44,10 +47,15 @@ public class POO {
         casaMap.put("casa3", claudaCasa);
         casaMap.put("casa4", casaVacia);
 
+        System.out.println(casaMap.size());
+        casaMap.remove("casa2");
+        System.out.println(casaMap.size());
+
         for (Map.Entry<String, Casa> entry : casaMap.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
+        casaMap.put("casa1", miCasa);
         System.out.println(casaMap.get("casa1"));
     }
 }
