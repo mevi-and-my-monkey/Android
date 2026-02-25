@@ -1,5 +1,7 @@
 package com.mevi.practicas;
 
+import java.util.Objects;
+
 /**
  * POO
  * Una clase defini a cierto objeto en especifico
@@ -37,6 +39,70 @@ public class Casa {
     public Casa() {
     }
 
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public char getSeccion() {
+        return seccion;
+    }
+
+    public void setSeccion(char seccion) {
+        this.seccion = seccion;
+    }
+
+    public short getNumero() {
+        return numero;
+    }
+
+    public void setNumero(short numero) {
+        this.numero = numero;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public long getFechaConstruccion() {
+        return fechaConstruccion;
+    }
+
+    public void setFechaConstruccion(long fechaConstruccion) {
+        this.fechaConstruccion = fechaConstruccion;
+    }
+
+    public float getImpuesto() {
+        return impuesto;
+    }
+
+    public void setImpuesto(float impuesto) {
+        this.impuesto = impuesto;
+    }
+
+    public double getMetrosCubicos() {
+        return metrosCubicos;
+    }
+
+    public void setMetrosCubicos(double metrosCubicos) {
+        this.metrosCubicos = metrosCubicos;
+    }
+
+    public boolean isHipotecada() {
+        return hipotecada;
+    }
+
+    public void setHipotecada(boolean hipotecada) {
+        this.hipotecada = hipotecada;
+    }
+
     @Override
     public String toString() {
         return "Casa{" +
@@ -51,5 +117,15 @@ public class Casa {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Casa casa = (Casa) o;
+        return seccion == casa.seccion && numero == casa.numero && precio == casa.precio && fechaConstruccion == casa.fechaConstruccion && Float.compare(impuesto, casa.impuesto) == 0 && Double.compare(metrosCubicos, casa.metrosCubicos) == 0 && hipotecada == casa.hipotecada && Objects.equals(calle, casa.calle);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(calle, seccion, numero, precio, fechaConstruccion, impuesto, metrosCubicos, hipotecada);
+    }
 }

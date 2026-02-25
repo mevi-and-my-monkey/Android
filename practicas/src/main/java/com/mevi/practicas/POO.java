@@ -57,5 +57,43 @@ public class POO {
 
         casaMap.put("casa1", miCasa);
         System.out.println(casaMap.get("casa1"));
+
+        Main.nuevoTema("Herencia");
+        Apartamento apartamentoPlaya = new Apartamento("Malecon", 'B', (short) 101,
+                2600000, 177204720402L, 6.3f, 180.123124125, true, (short) 5);
+
+        System.out.println(apartamentoPlaya);
+
+        Main.nuevoTema("Polimorfismo");
+
+        venderPropiedades(miCasa);
+        venderPropiedades(apartamentoPlaya);
+        Casa apartamentoCiudad = new Apartamento("Principal", 'A', (short) 10, 1500000, 177204720402L,
+                6.3f, 180.123124125, false, (short) 5);
+        venderPropiedades(apartamentoCiudad);
+
+        Casa casaNueva = new Casa();
+        casaNueva.setCalle("Cortez");
+        casaNueva.setHipotecada(true);
+        casaNueva.setImpuesto(2.0f);
+        System.out.println(casaNueva);
+        venderPropiedades(casaNueva);
+
+        Main.nuevoTema("Equals y hashcode");
+
+        Casa miSegundaCasa = new Casa("independencia", 'd', (short) 34, 2000000, 1772047204028L,
+                3.5f, 320.12312314, false);
+
+        System.out.println(miCasa.equals(miSegundaCasa));
+        Casa miTerceraCasa = new Casa();
+        System.out.println(casaMap.containsValue(claudaCasa));
+    }
+
+    private static void venderPropiedades(Casa casa) {
+        if (casa.isHipotecada()) {
+            System.out.println("Imposible vender!!");
+        } else {
+            System.out.println("Venta realizada");
+        }
     }
 }
